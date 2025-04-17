@@ -1,5 +1,6 @@
 from utils import parity ,crc ,checksum
-
+from transmitter import transmit
+from reciever import recieve
 
 if __name__ == "__main__":
 
@@ -34,4 +35,10 @@ if __name__ == "__main__":
                 continue
         
         print("-" * 50)
+
+        encoded_message = transmit(message,method)
+        print(f" Original Message : {message}\n Encoded Message : {encoded_message}")
+
+        decoded_message = recieve(encoded_message,method)
+        print(f" Recieved Message {decoded_message}")
     
