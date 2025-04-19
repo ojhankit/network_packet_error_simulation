@@ -25,5 +25,8 @@ def apply_crc(message:str):
     return message + remainder
 
 
-def verify_crc(message:str):
-    pass
+def verify_crc(encoded_message:str):
+    divisor = "1011"
+    remainder = mod2div(encoded_message ,divisor)
+
+    return all(bit == '0' for bit in remainder)
